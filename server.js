@@ -14,14 +14,11 @@ const PORT = process.env.PORT;
 
 
 //MIDDLEWARE
-app.use(express.urlencoded({ extended: true }));
-// app.use(methodOverride("_method"));
-app.use(express.static("public"));
 app.use(express.json())
 
 
-const BooksRouters = require("./routes/booksRoutes")
-app.use("/books", BooksRouters)
+const productRoutes = require("./routes/productRoutes");
+app.use("/api/products", productRoutes);
 
  // PORT
 app.listen(PORT, ()=>{
